@@ -1,33 +1,37 @@
-import Footer from '../../components/patterns/Footer';
-import Link from '../../components/Link';
-import { theme } from '../../theme/theme';
-import { Box, Text } from '../../theme/components';
+import Head from "next/head";
+import Footer from "../../components/patterns/Footer";
+import Link from "../../components/Link";
+import { theme } from "../../theme/theme";
+import { Box, Text } from "../../theme/components";
 
 export default function FAQScreen({ faq }) {
   return (
     <Box
       styleSheet={{
-        backgroundColor: theme.colors.neutral["050"]
+        backgroundColor: theme.colors.neutral["050"],
       }}
     >
+      <Head>
+        <title>FAQ - Alura Cases</title>
+      </Head>
       <Box
         as="main"
         styleSheet={{
           flex: 1,
-          maxWidth:theme.space.xcontainer_xl,
+          maxWidth: theme.space.xcontainer_xl,
           marginHorizontal: "auto",
           paddingHorizontal: {
             xs: theme.space.x4,
             sm: theme.space.x6,
             lg: theme.space.x8,
           },
-          paddingVertical:{
+          paddingVertical: {
             xs: theme.space.x16,
             lg: theme.space.x20,
           },
         }}
       >
-        <Box 
+        <Box
           styleSheet={{
             display: "grid",
             gridTemplateColumns: {
@@ -35,15 +39,15 @@ export default function FAQScreen({ faq }) {
             },
             gap: {
               lg: theme.space.x8,
-            }
+            },
           }}
         >
           <Box>
             <Text
               as="h2"
               styleSheet={{
-                textVariant:theme.typography.variants.heading2,
-                color:theme.colors.neutral[900],
+                textVariant: theme.typography.variants.heading2,
+                color: theme.colors.neutral[900],
               }}
             >
               FAQ: Perguntas Frequentes
@@ -56,7 +60,8 @@ export default function FAQScreen({ faq }) {
                 color: theme.colors.neutral[500],
               }}
             >
-              Não consegue encontrar a resposta que procura? entre em contato com nosso{' '}
+              Não consegue encontrar a resposta que procura? entre em contato
+              com nosso{" "}
               <Link
                 href="mailto:contato@alura.com.br"
                 styleSheet={{
@@ -82,7 +87,7 @@ export default function FAQScreen({ faq }) {
                 href="/"
                 styleSheet={{
                   color: theme.colors.primary[400],
-                  fontWeight: '500',
+                  fontWeight: "500",
                   hover: {
                     color: theme.colors.primary[300],
                   },
@@ -100,18 +105,18 @@ export default function FAQScreen({ faq }) {
               },
               gridColumn: {
                 lg: "span 2 / span 2;",
-              }
+              },
             }}
           >
             {faq.length === 0 && (
               <Box
                 styleSheet={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'center',
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
                   borderTop: {
                     xs: `${theme.space.xpx} solid ${theme.colors.neutral["200"]}`,
-                    sm: 'none',
+                    sm: "none",
                   },
                   paddingTop: {
                     xs: theme.space.x6,
@@ -124,7 +129,7 @@ export default function FAQScreen({ faq }) {
                     sm: theme.space.x6,
                   },
                   textAlign: "center",
-                  minHeight: theme.space['x1/1']
+                  minHeight: theme.space["x1/1"],
                 }}
               >
                 <Text
@@ -180,9 +185,9 @@ export default function FAQScreen({ faq }) {
           </Box>
         </Box>
       </Box>
-      <Footer /> 
+      <Footer />
     </Box>
-  )
+  );
 }
 
 FAQScreen.defaultProps = {
