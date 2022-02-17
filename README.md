@@ -1,4 +1,4 @@
-#AluraCases
+# AluraCases
 
 Projeto desenvolvido no primeiro curso da formação next da Alura.
 
